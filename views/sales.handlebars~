@@ -1,0 +1,56 @@
+<h1>Add</h1>
+
+<form action="sales/add" method="POST" class="form-horizontal" >
+      
+	<div class="form-group">
+		<label class="control-label col-xs-2">Products</label>
+		<div class="col-xs-10">	 
+     			<select name="Id">
+    				{{#each product}}
+      					<option value = "{{Id}}">{{Name}}</option>
+    				{{/each}}
+  			</select>
+		</div>
+
+	</div>
+
+	<div class="form-group">
+		<label for="Amount" class="control-label col-xs-2">Qauntity</label>	 
+		 <div class="col-xs-10">
+			<input type="number" name="Qty" class="form-control" placeholder="Please Enter Sales Amount" required>
+		</div>
+	</div>
+
+
+	<div class="form-group">
+		<label for="number" class="control-label col-xs-2">Price</label>
+		<div class="col-xs-10">	 
+     			<input type="number" step="any" name="Sales_price" placeholder="Please Enter Sales Price" required>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label for="date" class="control-label col-xs-2">Date</label>
+			<div class="col-xs-10">	 
+     				<input type="date" class="form-control" name="Sales_date" placeholder="yyyy-mm-dd" required/>
+			</div>
+		
+		</div> 
+ 	<input type="submit" class="btn btn-primary" id="enter" onclick="myFunction()">  
+
+</form>
+<h1>Sales</h1>
+{{#sales}}
+  <h2>{{Name}}</h2>
+  <h2>{{Sales_price}}</h2>
+  <h2>{{Qty}}</h2>
+  <h2>{{Sales_date}}</h2>
+  <a href="/sales/edit/{{Id}}">Edit</a>
+  <a href="/sales/delete/{{Id}}">Delete</a>
+{{/sales}}
+
+{{#no_sales}}
+  <p>No products available yet. Add some above.</p>
+{{/no_sales}}
+
+

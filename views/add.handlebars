@@ -1,0 +1,34 @@
+<h2>Add Computer Languages</h2>
+
+<form action="products/add" method="POST" class="form-horizontal" >
+ 	<div class="form-group">
+		<label for="text" class="control-label col-xs-2">Computer Language</label>	 
+		 <div class="col-xs-5">
+			<input type="text" name="ComputerLanguage_name" value="{{ComputerLanguage_name}}" class="form-control" placeholder="Please Enter ComputerLanguage name" required>
+		</div>
+	</div>
+
+<div class="form-group">
+		<label class="control-label col-xs-2">Category</label>
+		<div class="col-xs-5">	 
+     			<select name="Id">
+    				{{#each category}}
+      					<option value = "{{Id}}">{{Category_name}}</option>
+    				{{/each}}
+  			</select>
+		</div>
+
+	</div>
+
+<input type="submit" class="btn btn-success" id="enter" onclick="myFunction()">  
+</form><!--<form action="/products/add" method="POST">
+	Description: <input type="text" name="ComputerLanguage_name" value="{{ComputerLanguage_name}}">
+	{{#categories}}
+	<select>
+    <option value="{{category_id}}">{{category_name}}</option>
+  
+   </select>
+
+{{/categories}}
+	<input type="submit" class="btn btn-success" id="enter" onclick="myFunction()">  
+</form>-->

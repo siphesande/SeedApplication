@@ -1,0 +1,47 @@
+<h2>Add Category</h2>
+  
+<form action="categories/add" method="POST" class="form-inline" >
+      
+<div class="form-group form-group-sm">
+    <label for="text" class="control-label col-xs-3">Categories:</label>
+      <div class="col-xs-3">   
+          <input type="text" step="any" name="Category_name" value ="{{Category_name}}" class="form-control" placeholder="Enter category name" required>
+     </div>
+</div>
+
+  
+  <input type="submit" class="btn btn-success" id="enter" onclick="myFunction()">  
+</form>
+
+</form>
+
+<h2>Categories</h2>
+<table class = "table" id = "Categories">
+  </tr>
+       <th>Category Id</th>
+       <th>Category Name</th>
+  </tr>
+{{#categories}}
+<tr>
+  <td>{{Id}}</td>
+  <td>{{Category_name}}</td>
+  <td><a href="/categories/edit/{{Id}}" class ="btn btn-success"><span   class="glyphicon glyphicon-edit"></span> Edit</a>
+  </td>
+  <td><a href="/categories/delete/{{Id}}" class="btn btn-danger">
+      <span class="glyphicon glyphicon-remove"></span> Delete 
+     </a>
+  </td>
+</tr>
+
+{{/categories}}
+
+{{#no_categories}}
+  <p>No products available yet. Add some above.</p>
+{{/no_categories}}
+
+</table>
+
+
+
+
+

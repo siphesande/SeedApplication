@@ -1,0 +1,56 @@
+<h2>Add School</h2>
+
+<form action="school/add" method="POST" class="form-inline" >
+      
+<div class="form-group form-group-sm">
+    <label for="text" class="control-label col-xs-3"> School:</label>
+      <div class="col-xs-3">   
+          <input type="text" step="any" name="School_name" value ="{{School_name}}" class="form-control" placeholder="Enter supplier name" required>
+     </div>
+</div>
+
+  
+  <input type="submit" class="btn btn-success" id="enter" onclick="myFunction()">  
+</form>
+
+
+<!--<form action="/school/add" method="POST">
+	Supplier: <input type="text" name="School_name" value="{{School_name}}">
+  
+	<input type="submit" class="btn btn-success" id="enter" onclick="myFunction()">  
+	<select name="Category_Id">
+		{{#categories}}
+     <option value="{{Id}}">{{category_name}}</option>
+      {{/categories}}
+   </select>  
+
+
+	<input type="submit">
+</form>-->
+
+<h2>school</h2>
+<table class ="table" id = "school">
+  </tr>
+       <th>School Id</th>
+       <th>Supplier Name</th>
+  </tr>
+{{#school}}
+<tr>
+  <th>{{Id}}</th>
+  <th>{{School_name}}</th>
+  <td><a href="/school/edit/{{Id}}" class ="btn btn-success"><span class="glyphicon glyphicon-edit"></span> Edit</a>
+  </td>
+  <td><a href="/school/delete/{{Id}}" class="btn btn-danger">
+     <span class="glyphicon glyphicon-remove"></span> Delete 
+     </a>
+   </td>
+</tr>
+{{/school}}
+
+<!-- {{#no_school}}
+  <p>No products available yet. Add some above.</p>
+{{/no_school}} -->
+
+</table>
+
+

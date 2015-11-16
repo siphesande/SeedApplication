@@ -1,0 +1,110 @@
+<h2>Add Enrollments</h2>
+
+<form action="enrollments/add" method="POST" class="form-horizontal" >
+      
+  <div class="form-group ">
+    <label class="control-label col-xs-2">Enrollments :</label>
+    <div class="col-xs-10">  
+          <select name="Product_Id">
+            {{#each enrollments}}
+                <option value = "{{Id}}">{{ComputerLanguage_name}}</option>
+            {{/each}}
+        </select>
+    </div>
+  </div>
+
+   <div class= "form-group">
+     <label class="control-label col-xs-2">Schools :</label>
+     <div class="col-xs-10">  
+        <select name="Supplier_Id">
+          {{#each schools}}
+            <option value = "{{Id}}">{{School_name}}<option>
+          {{/each}}
+          </select>
+    </div>
+  </div>
+
+  <div class="form-group form-group-sm">
+    <label for="Amount" class="control-label col-xs-2">Numbers :</label>  
+     <div class="col-xs-3">
+      <input type="number" name="Numbers" value="{{Numbers}}"class="form-control" placeholder="Please Enter  Amount" required>
+    </div>
+  </div>
+
+
+  <div class="form-group form-group-sm">
+    <label for="number" class="control-label col-xs-2">Enrollment Price :</label>
+    <div class="col-xs-3">  
+          <input type="number" step="any" name="Enrollment_price" value="{{Purchase_price}}" class="form-control" placeholder="Please Enter Purchase Price" required>
+    </div>
+  </div>
+
+  <div class="form-group form-group-sm">
+    <label for="date" class="control-label col-xs-2">Enrollment date :</label>
+      <div class="col-xs-3">  
+            <input type="date" class="form-control" name="Enrollment_date" placeholder="yyyy-mm-dd" required/>
+      </div>
+    
+    </div> 
+  <input type="submit" class="btn btn-success" id="enter" onclick="myFunction()">  
+
+</form>
+
+
+<h2>Enrollments</h2>
+<table class = "table" id = "Purchase">
+  <tr>
+     
+     <th>ComputerLanguage Name</th>
+     <th>School Name</th>
+     <th>Enrollment Price</th>
+     <th>Numbers</th>
+     <th>Enrollment Date<th>
+</tr>
+{{#enrollments}}
+  <tr>
+
+  <th>{{ComputerLanguage_name}}</th>
+  <th>{{School_name}}</th>
+  <th>{{Enrollment_price}}</th>
+  <th>{{Numbers}}</th>
+  <th>{{Enrollment_date}}</th>
+
+  <td> <a href="/enrollments/edit/{{Id}}" class ="btn btn-success"><span class="glyphicon glyphicon-edit"></span> Edit</a></td>
+ <td><a href="/enrollments/delete/{{Id}}" class="btn btn-danger">
+    <span class="glyphicon glyphicon-remove"></span> Delete 
+    </a></td>
+
+ </tr> 
+{{/enrollments}}
+
+{{#no_enrollments}}
+  <p>No enrollments available yet. Add some above.</p>
+{{/no_enrollments}}
+
+</table>
+
+<!--<form action="/enrollments/add" method="POST">
+  
+  QTY: <input type="text" name="Qty" value="{{Qty}}">
+  Purchase Date:<input type="date" name="Purchase_date" value="{{Purchase_date}}">
+  Purchase Price:<input type="number" name="Purchase_price"value="{{Purchase_price}}">
+  
+  
+  <select name="Product_Id">
+    {{#Enrollments}}
+     <option value="{{Id}}">{{ComputerLanguaga_name}}</option>
+      {{/Enrollments}}
+   </select>
+
+   <select name="Supplier_Id">
+    {{#schools}}
+     <option value="{{Id}}">{{School_name}}</option>
+      {{/schools}}
+   </select>
+
+<input type="submit">
+</form>-->
+
+
+

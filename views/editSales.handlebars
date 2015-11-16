@@ -1,0 +1,69 @@
+<!---<h1>Edit Sale</h1>
+{{#data}}
+<form action="/sales/update/{{Id}}" method = "POST">
+	Description:<input type="text" name="product_name" value="{{product_name}}">
+	<input type="submit">
+</form>{
+{{/data}}-->
+
+
+<h1>EDIT Sales</h1>
+{{#sale}}
+<form action="/sales/update/{{Id}}" method = "POST" class="form-horizontal" >
+ 
+
+	<div class="form-group form-group-sm">
+		<label for="number" class="control-label col-xs-2">Qauntity :</label>	 
+		 <div class="col-xs-3">
+			<input type="number" name="Qty"  value ="{{Qty}}"  class="form-control"/>
+		</div>
+	</div>
+
+
+	<div class="form-group form-group-sm">
+		<label for="number" class="control-label col-xs-2">Price :</label>
+		<div class="col-xs-3">	 
+     			<input type="number" step="any" name="Sales_price" value ="{{Sales_price}}"  class="form-control"/>
+		</div>
+	</div>
+
+	<div class="form-group form-group-sm">
+		<label for="date" class="control-label col-xs-2">Date :</label>
+			<div class="col-xs-3">	 
+     				<input type="date"  name="Sales_date" value ="{{Sales_date}}"  class="form-control"/>
+			</div>
+		
+	</div> 
+
+
+     {{/sale}}
+     <div class="form-group">
+		<label class="control-label col-xs-2">Products</label>
+		<div class="col-xs-10">
+              <select name="Product_Id">
+    				{{#each products}}
+
+                	{{#if selectedProduct }}
+	 		    <option value = "{{Id}}" selected="true" >{{Name}}</option>
+		    	{{else}}
+  				<option value = "{{Id}}" >{{Name}}</option>
+			{{/if}}
+
+            {{/each}}
+  			</select>
+		</div>
+	</div>
+
+
+ 	<input type="submit" class="btn btn-success" id="enter" onclick="myFunction()">  
+
+</form>
+
+
+
+
+
+
+
+
+
