@@ -35,7 +35,7 @@
   <div class="form-group form-group-sm">
     <label for="number" class="control-label col-xs-2">Enrollment Price :</label>
     <div class="col-xs-3">  
-          <input type="number" step="any" name="Enrollment_price" value="{{Purchase_price}}" class="form-control" placeholder="Please Enter Purchase Price" required>
+          <input type="number" step="any" name="Enrollment_price" value="{{Enrollment_price}}" class="form-control" placeholder="Please Enter Purchase Price" required>
     </div>
   </div>
 
@@ -50,9 +50,8 @@
 
 </form>
 
-
 <h2>Enrollments</h2>
-<table class = "table" id = "Purchase">
+<table class = "table" id = "Enrollment ">
   <tr>
      
      <th>ComputerLanguage Name</th>
@@ -84,27 +83,6 @@
 
 </table>
 
-<!--<form action="/enrollments/add" method="POST">
-  
-  QTY: <input type="text" name="Qty" value="{{Qty}}">
-  Purchase Date:<input type="date" name="Purchase_date" value="{{Purchase_date}}">
-  Purchase Price:<input type="number" name="Purchase_price"value="{{Purchase_price}}">
-  
-  
-  <select name="Product_Id">
-    {{#Enrollments}}
-     <option value="{{Id}}">{{ComputerLanguaga_name}}</option>
-      {{/Enrollments}}
-   </select>
-
-   <select name="Supplier_Id">
-    {{#schools}}
-     <option value="{{Id}}">{{School_name}}</option>
-      {{/schools}}
-   </select>
-
-<input type="submit">
-</form>-->
 
 
 

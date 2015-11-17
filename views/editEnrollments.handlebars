@@ -1,0 +1,75 @@
+<h1>EDIT Enrollments</h1>
+{{#enrollments}}
+<form action="/purchases/update/{{Id}}" method = "POST" class="form-horizontal">
+
+
+	<div class="form-group form-group-sm">
+		<label for="number" class="control-label col-xs-2">Numbers :</label>	 
+		 <div class="col-xs-3">
+			<input type="number" name="Qty"  value ="{{Qty}}"  class="form-control"/>
+		</div>
+	</div>
+
+
+	<div class="form-group form-group-sm">
+		<label for="number" class="control-label col-xs-2">Enrollment Price:</label>
+		<div class="col-xs-3">	 
+	     			<input type="number"  name="enrollment_price" value ="{{enrollment_price}}" class="form-control"/>
+	       </div>
+
+	 </div>
+	<div class="form-group form-group-sm">
+		<label for="date" class="control-label col-xs-2">Date:</label>
+			<div class="col-xs-3">	 
+     				<input type="date"  name="enrollment_date" value = "{{enrollment_date}}" class="form-control"/>
+		
+		</div> 
+	</div> 
+
+{{/enrollments}}
+
+
+	<div class="form-group">
+		<label class="control-label col-xs-2">Schools</label>
+		<div class="col-xs-10">
+     			<select name="School_Id">
+    				{{#each school}}
+  					{{#if selectedSchool }}
+      					<option  selected="true" value = "{{Id}}">{{School_name}}</option>
+                                        {{else}}
+  					<option value = "{{Id}}" >{{School_name}}</option>
+                                       {{/if}}
+    				{{/each}}
+  			</select>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label class="control-label col-xs-2">ComputerLanguages</label>
+		<div class="col-xs-10">
+
+
+     			<select name="ComputerLanguage_Id">
+    				{{#each ComputerLanguage}}
+
+                	{{#if selectedComputerLanguage }}
+	 		    <option value = "{{Id}}" selected="true" >{{ComputerLanguage_name}}</option>
+		    	{{else}}
+  				<option value = "{{Id}}" >{{ComputerLanguage_name}}</option>
+			{{/if}}
+
+            {{/each}}
+  			</select>
+		</div>
+	</div>
+	 <input type="submit" class="btn btn-success" id="enter" onclick="myFunction()">
+</form>
+
+</div>
+      <script>
+      function myFunction() {
+          alert("New ComputerLanguage has been edited");
+        }
+      </script>
+</div>
+	

@@ -5,7 +5,6 @@ exports.show = function (req, res, next) {
                if (err) return next(err);
     		       res.render( 'schools', {
 				   no_schools : results.length === 0,
-				   //products : results,
 				   schools: results
     		      });
 

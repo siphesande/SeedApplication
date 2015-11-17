@@ -1,31 +1,13 @@
-<!--<h2>Edit Product</h2>
 
-{{#data}}
-<form action="/computerLanguages/update/{{Id}}" method="POST">	
-	Product: <input type="text" name="product_name" value="{{product_name}}">
-{{/data}} 
-
-	
-	<select name="Category_Id">
-      {{#category}}
-     <option value="{{Id}}">{{category_name}}</option>
-       {{/category}}
-    </select>
-   
-
- <input type="submit" class="btn btn-success" id="enter" onclick="myFunction()">  
-
- </form>-->
-
-<h1>Edit ComputerLanguages</h1>
+<h1>Edit Computer Languages</h1>
 {{#data}}
 <form action="/computerLanguages/update/{{Id}}" method = "POST" class="form-horizontal">
  </div>
 
 	<div class="form-group form-group-sm">
-		<label for="text" class="control-label col-xs-2">ComputerLanguages :</label>
+		<label for="text" class="control-label col-xs-2">Computer Languages :</label>
 			<div class="col-xs-3">	 
-     				<input type="text" class="form-control" name="ComputerLanguages_name" placeholder="Edit product" required/>
+     				<input type="text" class="form-control" name="ComputerLanguages_name" placeholder="Edit Computer Language" required/>
 			</div>
 		
 		</div> 
@@ -42,7 +24,7 @@
            </select>
 
 
-     			<!--<input type="number" step="any" name="Sales_price" placeholder="Please Enter Sales Price" required>-->
+     			
 		</div>
 	</div>
 

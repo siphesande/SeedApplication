@@ -6,7 +6,7 @@ exports.show = function (req, res, next) {
         	if (err) return next(err);
 			res.render( 'computerLanguages', {
 			    no_ComputerLanguages :results.length === 0,
-				ComputerLanguages : results,
+				computerLanguages : results,
 				 categories: categories
 			    });
 	        });
@@ -78,7 +78,7 @@ exports.mostPopulerLang =function (req, res, next){
     var id = req.params.Id;
     req.getConnection(function(err, connection){
 
-        connection.query('SELECT ComputerLanguages.ComputerLanguage_name, ComputerLanguages.Id,Categories.category_name, SUM( Enrollments.Numbers ) AS Numbers FROM Enrollments INNER JOIN ComputerLanguages ON Enrollments.ComputerLanguage_id = ComputerLanguages.Id INNER JOIN Categories ON ComputerLanguages.Category_id = Categories.Id GROUP BY ComputerLanguages.ComputerLanguage_name ORDER BY Numbers DESC LIMIT 1 ',[], function(err, results){
+        connection.query('SELECT ComputerLanguages.ComputerLanguage_name, ComputerLanguages.Id,Categories.Category_name, SUM( Enrollments.Numbers ) AS Numbers FROM Enrollments INNER JOIN ComputerLanguages ON Enrollments.ComputerLanguage_id = ComputerLanguages.Id INNER JOIN Categories ON ComputerLanguages.Category_Id = Categories.Id GROUP BY ComputerLanguages.ComputerLanguage_name ORDER BY Numbers DESC LIMIT 1 ',[], function(err, results){
              if (err) return next(err);
              res.render('mostPopulerLang',{
              most : results
@@ -88,12 +88,12 @@ exports.mostPopulerLang =function (req, res, next){
     });
 }
 
-exports.leastPopulerLangu =function (req, res, next){
+exports.leastPopulerLang =function (req, res, next){
     var id = req.params.Id;
     req.getConnection(function(err, connection){
-        connection.query('SELECT ComputerLanguages.ComputerLanguage_name, ComputerLanguages.Id,Categories.category_name, SUM( Sales.qty ) AS qty FROM Sales INNER JOIN Products ON Sales.product_id = Products.Id INNER JOIN Categories ON Products.Category_id = Categories.Id GROUP BY Products.ComputerLanguage_name ORDER BY qty ASC LIMIT 1 ',[], function(err, results){
-            if (err) return next(err);
-            res.render('leastPopulerLangu',{
+        connection.query('SELECT ComputerLanguages.ComputerLanguage_name, ComputerLanguages.Id,Categories.Category_name, SUM( Enrollments.Numbers ) AS Numbers FROM Enrollments INNER JOIN ComputerLanguages ON Enrollments.ComputerLanguage_Id = Products.Id INNER JOIN Categories ON Products.Category_Id = Categories.Id GROUP BY Products.ComputerLanguage_name ORDER BY qty ASC LIMIT 1 ',[], function(err, results){
+            if (err) return next(err);c
+            res.render('leastPopulerLang',{
             least : results
             });
 

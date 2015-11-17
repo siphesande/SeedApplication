@@ -5,7 +5,7 @@
 <div class="form-group form-group-sm">
     <label for="text" class="control-label col-xs-3"> School:</label>
       <div class="col-xs-3">   
-          <input type="text" step="any" name="School_name" value ="{{School_name}}" class="form-control" placeholder="Enter supplier name" required>
+          <input type="text" step="any" name="School_name" value ="{{School_name}}" class="form-control" placeholder="Enter school name" required>
      </div>
 </div>
 
@@ -14,25 +14,11 @@
 </form>
 
 
-<!--<form action="/school/add" method="POST">
-	Supplier: <input type="text" name="School_name" value="{{School_name}}">
-  
-	<input type="submit" class="btn btn-success" id="enter" onclick="myFunction()">  
-	<select name="Category_Id">
-		{{#categories}}
-     <option value="{{Id}}">{{category_name}}</option>
-      {{/categories}}
-   </select>  
-
-
-	<input type="submit">
-</form>-->
-
 <h2>school</h2>
 <table class ="table" id = "school">
   </tr>
        <th>School Id</th>
-       <th>Supplier Name</th>
+       <th>School Name</th>
   </tr>
 {{#school}}
 <tr>
@@ -47,9 +33,7 @@
 </tr>
 {{/school}}
 
-<!-- {{#no_school}}
-  <p>No products available yet. Add some above.</p>
-{{/no_school}} -->
+
 
 </table>
 
