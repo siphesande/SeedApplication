@@ -1,0 +1,51 @@
+<form action="computerLanguages/add" method="POST" class="form-inline" >
+  <div class="form-group form-group-sm">
+
+    <label for="text" class="control-label col-xs-3">Computer Languages:</label>   
+     <div class="col-xs-3">
+      <input type="text" name="ComputerLanguage_name" value="{{ComputerLanguage_name}}" class="form-control" placeholder="Please Enter Coputer Laguage name" required>
+    </div>
+  </div>
+
+<div class="form-group">
+    <label class="control-label col-xs-3">Category:</label>
+    <div class="col-xs-3">   
+          <select name="Category_Id">
+           {{#categories}}
+                <option value = "{{Id}}">{{Category_name}}</option>
+            {{/categories}}
+        </select>
+    </div>
+
+  </div>
+
+<input type ="submit" class="btn btn-success" id="enter" onclick="myFunction()">  
+
+</form>
+
+
+<h2>computerLanguages</h2>
+<table class = "table" id = "computerLanguages List">
+
+<tr>
+     <th>Computer Language Id</th>
+     <th>Product Name</th>
+     <th>Category Name</th>
+</tr>
+{{#computerLanguages}}
+  <tr>
+  <td>{{Id}}
+  <td>{{ComputerLanguage_name}}</td>
+  <td>{{Category_name}}</td>
+ <td> <a href="/computerLanguages/edit/{{Id}}" class ="btn btn-success"><span class="glyphicon glyphicon-edit"></span> Edit</a></td>
+ <td><a href="/computerLanguages/delete/{{Id}}" class="btn btn-danger">
+    <span class="glyphicon glyphicon-remove"></span> Delete 
+    </a></td>
+<tr>
+{{/computerLanguages}}
+
+{{#no_computerLanguages}}
+  <p>No computerLanguages available yet. Add some above.</p>
+{{/no_computerLanguages}}
+
+</table>

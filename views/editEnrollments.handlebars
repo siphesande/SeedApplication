@@ -1,12 +1,12 @@
 <h1>EDIT Enrollments</h1>
-{{#enrollments}}
-<form action="/purchases/update/{{Id}}" method = "POST" class="form-horizontal">
+{{#data}}
+<form action="/enrollments/update/{{Id}}" method = "POST" class="form-horizontal">
 
 
 	<div class="form-group form-group-sm">
-		<label for="number" class="control-label col-xs-2">Numbers :</label>	 
+		<label for="number" class="control-label col-xs-7">Numbers :</label>	 
 		 <div class="col-xs-3">
-			<input type="number" name="Qty"  value ="{{Qty}}"  class="form-control"/>
+			<input type="number" name="Numbers"  value ="{{Numbers}}"  class="form-control"/>
 		</div>
 	</div>
 
@@ -26,20 +26,16 @@
 		</div> 
 	</div> 
 
-{{/enrollments}}
-
-
-	<div class="form-group">
+{{/data}}
+<div class="form-group">
 		<label class="control-label col-xs-2">Schools</label>
 		<div class="col-xs-10">
      			<select name="School_Id">
-    				{{#each school}}
-  					{{#if selectedSchool }}
-      					<option  selected="true" value = "{{Id}}">{{School_name}}</option>
-                                        {{else}}
+    				{{#school}}
+  					
+      					
   					<option value = "{{Id}}" >{{School_name}}</option>
-                                       {{/if}}
-    				{{/each}}
+                        {{/school}}             
   			</select>
 		</div>
 	</div>
@@ -50,15 +46,13 @@
 
 
      			<select name="ComputerLanguage_Id">
-    				{{#each ComputerLanguage}}
+    				{{# ComputerLanguages}}
 
-                	{{#if selectedComputerLanguage }}
-	 		    <option value = "{{Id}}" selected="true" >{{ComputerLanguage_name}}</option>
-		    	{{else}}
+                	
+	 		    
   				<option value = "{{Id}}" >{{ComputerLanguage_name}}</option>
-			{{/if}}
-
-            {{/each}}
+  				{{/ComputerLanguages}}
+			
   			</select>
 		</div>
 	</div>

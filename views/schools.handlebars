@@ -1,6 +1,6 @@
 <h2>Add School</h2>
 
-<form action="school/add" method="POST" class="form-inline" >
+<form action="schools/add" method="POST" class="form-inline" >
       
 <div class="form-group form-group-sm">
     <label for="text" class="control-label col-xs-3"> School:</label>
@@ -20,18 +20,18 @@
        <th>School Id</th>
        <th>School Name</th>
   </tr>
-{{#school}}
+{{#schools}}
 <tr>
   <th>{{Id}}</th>
   <th>{{School_name}}</th>
-  <td><a href="/school/edit/{{Id}}" class ="btn btn-success"><span class="glyphicon glyphicon-edit"></span> Edit</a>
+  <td><a href="/schools/edit/{{Id}}" class ="btn btn-success"><span class="glyphicon glyphicon-edit"></span> Edit</a>
   </td>
-  <td><a href="/school/delete/{{Id}}" class="btn btn-danger">
+  <td><a href="/schools/delete/{{Id}}" class="btn btn-danger">
      <span class="glyphicon glyphicon-remove"></span> Delete 
      </a>
    </td>
 </tr>
-{{/school}}
+{{/schools}}
 
 
 

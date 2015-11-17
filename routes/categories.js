@@ -69,7 +69,7 @@ exports.mostPopulerCat =function (req, res, next){
     var id = req.params.Id;
     req.getConnection(function(err, connection){
 
-        connection.query('SELECT Categories.Id,Categories.Category_name, sum( Enrollment.Numbers) AS TotalNumbers FROM Enrollments INNER JOIN ComputerLanguages ON Enrollments.ComputerLanguage_Id = ComputerLanguages.Id INNER JOIN Categories ON ComputerLanguages.Category_id = Categories.Id GROUP BY Categories.Category_name ORDER BY TotalNumbers DESC LIMIT  1;',[], function(err, results){
+        connection.query('SELECT Categories.Id,Categories.Category_name, sum( Enrollments.Numbers) AS TotalNumbers FROM Enrollments INNER JOIN ComputerLanguages ON Enrollments.ComputerLanguage_Id = ComputerLanguages.Id INNER JOIN Categories ON ComputerLanguages.Category_id = Categories.Id GROUP BY Categories.Category_name ORDER BY TotalNumbers DESC LIMIT  1;',[], function(err, results){
              if (err) return next(err);
              res.render('mostPopulerCat',{
              most : results
@@ -83,7 +83,7 @@ exports.mostPopulerCat =function (req, res, next){
 exports.leastPopulerCat =function (req, res, next){
     var id = req.params.Id;
     req.getConnection(function(err, connection){
-        connection.query('SELECT Categories.Id,Categories.Category_name, sum( Enrollment.Numbers ) AS TotalNumbers FROM Enrollments INNER JOIN ComputerLanguages ON Enrollments.ComputerLanguage_Id = ComputerLanguages.Id INNER JOIN Categories ON ComputerLanguages.Category_Id = Categories.Id GROUP BY Categories.Category_name ORDER BY TotalNumbers ASC LIMIT  1;',[], function(err, results){
+        connection.query('SELECT Categories.Id,Categories.Category_name, sum( Enrollments.Numbers ) AS TotalNumbers FROM Enrollments INNER JOIN ComputerLanguages ON Enrollments.ComputerLanguage_Id = ComputerLanguages.Id INNER JOIN Categories ON ComputerLanguages.Category_Id = Categories.Id GROUP BY Categories.Category_name ORDER BY TotalNumbers ASC LIMIT  1;',[], function(err, results){
             if (err) return next(err);
             res.render('leastPopulerCat',{
                 least : results

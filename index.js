@@ -39,14 +39,15 @@ function errorHandler(err, req, res, next) {
 }
 
 //setup the handlers
+app.get("/",computerLanguages.home);
 app.get('/',function(req,res){res.render('index');});
 app.get('/computerLanguages', computerLanguages.show);
 app.get('/computerLanguages/edit/:Id', computerLanguages.get);
 app.post('/computerLanguages/update/:Id', computerLanguages.update);
 app.get('/computerLanguages/add', computerLanguages.showAdd);
 app.post('/computerLanguages/add', computerLanguages.add);
-// app.get('/computerLanguages/mostPopulerPrd', computerLanguages.mostPopulerPrd);
-// app.get('/computerLanguages/leastPopulerPrd', computerLanguages.leastPopulerPrd);
+app.get('/computerLanguages/mostPopulerLang', computerLanguages.mostPopulerLang);
+app.get('/computerLanguages/leastPopulerLang', computerLanguages.leastPopulerLang);
 //this should be a post but this is only an illustration of CRUD - not on good practices
 app.get('/computerLanguages/delete/:Id', computerLanguages.delete);
 

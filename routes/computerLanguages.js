@@ -13,9 +13,9 @@ exports.show = function (req, res, next) {
 		});
 	});
 }
-//exports.home =function(req, res){
-	//res.render('home')
-//}
+exports.home =function(req, res){
+	res.render('home');
+}
 exports.showAdd = function(req, res){
 	res.render('add');
 }
@@ -91,8 +91,8 @@ exports.mostPopulerLang =function (req, res, next){
 exports.leastPopulerLang =function (req, res, next){
     var id = req.params.Id;
     req.getConnection(function(err, connection){
-        connection.query('SELECT ComputerLanguages.ComputerLanguage_name, ComputerLanguages.Id,Categories.Category_name, SUM( Enrollments.Numbers ) AS Numbers FROM Enrollments INNER JOIN ComputerLanguages ON Enrollments.ComputerLanguage_Id = Products.Id INNER JOIN Categories ON Products.Category_Id = Categories.Id GROUP BY Products.ComputerLanguage_name ORDER BY qty ASC LIMIT 1 ',[], function(err, results){
-            if (err) return next(err);c
+        connection.query('SELECT ComputerLanguages.ComputerLanguage_name, ComputerLanguages.Id,Categories.Category_name, SUM( Enrollments.Numbers ) AS Numbers FROM Enrollments INNER JOIN ComputerLanguages ON Enrollments.ComputerLanguage_Id = ComputerLanguages.Id INNER JOIN Categories ON ComputerLanguages.Category_Id = Categories.Id GROUP BY ComputerLanguages.ComputerLanguage_name ORDER BY Numbers ASC LIMIT 1 ',[], function(err, results){
+            if (err) return next(err);
             res.render('leastPopulerLang',{
             least : results
             });
