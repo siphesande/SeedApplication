@@ -1,20 +1,20 @@
 
 <h1>Edit Computer Languages</h1>
 {{#data}}
-<form action="/computerLanguages/update/{{Id}}" method = "POST" class="form-horizontal">
- </div>
+<form action="/computerLanguages/update/{{Id}}" method = "POST" class="form-inline">
+ 
 
 	<div class="form-group form-group-sm">
-		<label for="text" class="control-label col-xs-2">Computer Languages :</label>
+		<label for="text" class="control-label col-xs-3">Computer Languages:</label>
 			<div class="col-xs-3">	 
-     				<input type="text" class="form-control" name="ComputerLanguage_name" placeholder="Edit Computer Language" required/>
+     				<input type="text" class="form-control" name="ComputerLanguage_name" value="{{ComputerLanguage_name}}" placeholder="Edit Computer Language" required>
 			</div>
 		
 		</div> 
 		{{/data}}
 
 	<div class="form-group">
-		<label for="number" class="control-label col-xs-2">Category Name :</label>
+		<label for="number" class="control-label col-xs-3">Category Name:</label>
 		<div class="col-xs-3">
 
 			<select name="Category_Id">
@@ -30,5 +30,8 @@
 
 	
  	<input type="submit" class="btn btn-success" id="enter" onclick="myFunction()">  
+
+ 	
+    
 
 </form>
