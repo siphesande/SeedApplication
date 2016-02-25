@@ -8,8 +8,8 @@ var express = require('express'),
     computerLanguages = require('./routes/computerLanguages'),
     categories = require('./routes/categories'),
     schools = require('./routes/schools'),
-    enrollments =  require('./routes/enrollments');
-    
+    enrollments =  require('./routes/enrollments')
+    bcryt = require('bcryt');
 var app = express();
 
 var dbOptions = {
@@ -51,7 +51,7 @@ app.get('/computerLanguages/leastPopulerLang', computerLanguages.leastPopulerLan
 //this should be a post but this is only an illustration of CRUD - not on good practices
 app.get('/computerLanguages/delete/:Id', computerLanguages.delete);
 
-
+// to show catergories to the browser
 app.get('/categories', categories.show);
 app.get('/categories/add', categories.showAdd);
 app.post('/categories/add', categories.add);
