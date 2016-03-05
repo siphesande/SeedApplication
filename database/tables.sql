@@ -38,4 +38,12 @@ CREATE TABLE Enrollments (
     primary key(Id)
 )ENGINE=InnoDB;
 
+DROP TABLE IF EXISTS `Users`;
+CREATE TABLE  users(
+Id int NOT NULL auto_increment primary key,
+username VARCHAR(30) NOT NULL,
+password VARCHAR(100) NOT NULL,
+role VARCHAR(15) NOT NULL
+);
+
 
