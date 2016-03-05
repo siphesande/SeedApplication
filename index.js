@@ -40,11 +40,11 @@ function errorHandler(err, req, res, next) {
 }
 
 //setup the handlers
-app.get("/",computerLanguages.home);
-app.get('/',function(req,res){res.render('index');});
+app.get("/",computerLanguages.home);//Returns the value of name app setting, where name is one of strings in the app settings table
+app.get('/',function(req,res){res.render('index');});//Routes HTTP GET requests to the specified path with the specified callback functions
 app.get('/computerLanguages', computerLanguages.show);
 app.get('/computerLanguages/edit/:Id', computerLanguages.get);
-app.post('/computerLanguages/update/:Id', computerLanguages.update);
+app.post('/computerLanguages/update/:Id', computerLanguages.update);//Routes HTTP POST requests to the specified path with the specified callback functions
 app.get('/computerLanguages/add', computerLanguages.showAdd);
 app.post('/computerLanguages/add', computerLanguages.add);
 app.get('/computerLanguages/mostPopulerLang', computerLanguages.mostPopulerLang);
