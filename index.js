@@ -11,6 +11,7 @@ var express = require('express'),
     enrollments =  require('./routes/enrollments')
     bcryt = require('bcryt');
 var app = express();
+//connection my server to the Mysql database
 
 var dbOptions = {
       host: 'localhost',
@@ -62,7 +63,7 @@ app.get('/categories/leastPopulerCat', categories.leastPopulerCat);
 app.get('/categories/delete/:Id', categories.delete);
 
 
-
+//connection to enrollments
 app.get('/enrollments', enrollments.show);
 app.post('/enrollments/add',enrollments.add);
 app.get('/enrollments/edit/:Id', enrollments.get);
