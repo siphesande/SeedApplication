@@ -80,6 +80,7 @@ app.get('/schools/delete/:Id', schools.delete);
 
 app.use(errorHandler);
 //configure the port number using and environment number
+//The app starts a server and listens on port 3000 for connections
 var portNumber = process.env.CRUD_PORT_NR || 3002;
 
 //start everything up
